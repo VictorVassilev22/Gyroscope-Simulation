@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="mecho.css">
+    <script src="mecho.js" ></script>
+<script>
+    let scene
+    function main(){
+
+        scene = new Mecho();
+        scene.ground = Mecho.INDUSTRIAL
+        scene.sky = Mecho.BLACK
+
+        p = pillar([0,0,0], 2, 0.3, 1.25, 3)
+        p.material=Mecho.METAL
+
+        //основното колче на жироскопа
+        t0 = tube([0,0,7], 10, 0.15);
+       t0.material = Mecho.SCRATCH
+
+        t1 = tube([0,0,8], 5, 0.25);
+        t1.material = Mecho.WOOD
+
+        r0 = ring(t1.center, 5, 0.5, 0.25, 0.25)
+        r0.rotV = 90
+        r0.rotH = 90
+        r0.material = Mecho.METAL
+
+        r1 = ring(t1.center, 5, 0.5, 0.25, 0.25)
+        r1.material = Mecho.METAL
+
+        r2 = ring(t1.center, 4, 0.5, 0.25, 0.75)
+        r2.material = Mecho.GOLD
+
+        //ra0 = rail(t1.center, 2, 1, 0.5, 0.1)
+        //ra0.material = Mecho.GOLD
+
+        b0 = beam(t1.center,2,0.5,0.5,0.6,0.5,0.5)
+        b0.material = Mecho.GOLD
+
+        b1 = beam(t1.center,2,0.5,0.5,0.6,0.5,0.5)
+        b1.material = Mecho.GOLD
+        b1.rotH = 90
+
+        b2 = beam(t1.center,2,0.5,0.5,0.6,0.5,0.5)
+        b2.material = Mecho.GOLD
+        b2.rotH = 180
+
+        b2 = beam(t1.center,2,0.5,0.5,0.6,0.5,0.5)
+        b2.material = Mecho.GOLD
+        b2.rotH = 270
+
+
+    }
+</script>
+
+    <title>Title</title>
+</head>
+
+<body onload="main()">
+<h1>Симулация на Жироскоп</h1>
+<h2>(с различни скорости и посоки на въртене)</h2>
+</body>
+
+</html>
